@@ -26,6 +26,14 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
+    const packageCollection = await client.db('tourist-guide').collection('package')
+
+
+
+    app.get('/package', async(req,res)=>{
+      const result = await packageCollection.find().toArray()
+      res.send(result)
+    })
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
