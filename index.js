@@ -27,6 +27,7 @@ async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
     const packageCollection = await client.db('tourist-guide').collection('package')
+    const StoryCollection = await client.db('tourist-guide').collection('story')
 
 
 
@@ -41,6 +42,12 @@ async function run() {
       const result = await packageCollection.findOne(query)
       res.send(result)
     })
+    // app.get('/package/:name', async(req,res)=>{
+    //   const name = req.params?.details?.tour_guide?.name;
+    //   const query = {name: new String(name)}
+    //   const result = await packageCollection.findOne(query)
+    //   res.send(result)
+    // })
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
