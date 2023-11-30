@@ -29,6 +29,12 @@ async function run() {
     const packageCollection = await client.db('tourist-guide').collection('package')
     const StoryCollection = await client.db('tourist-guide').collection('story')
 
+    // story part
+    app.get('/story', async(req,res)=>{
+      const result = await StoryCollection.find().toArray()
+      res.send(result)
+    })
+
 
 
     app.get('/package', async(req,res)=>{
