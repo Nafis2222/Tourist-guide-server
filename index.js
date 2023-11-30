@@ -50,6 +50,8 @@ async function run() {
 
     app.delete()
 
+    app.patch()
+
 
 
     app.get('/package', async(req,res)=>{
