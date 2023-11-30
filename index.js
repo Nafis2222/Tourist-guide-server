@@ -55,12 +55,7 @@ async function run() {
       const result = await packageCollection.findOne(query)
       res.send(result)
     })
-    // app.get('/package/:name', async(req,res)=>{
-    //   const name = req.params?.details?.tour_guide?.name;
-    //   const query = {name: new String(name)}
-    //   const result = await packageCollection.findOne(query)
-    //   res.send(result)
-    // })
+
     await client.connect();
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
