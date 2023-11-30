@@ -45,8 +45,10 @@ async function run() {
     })
 
     app.post('/booking', async(req,res)=>{
-      
+
     })
+
+    app.delete()
 
 
 
