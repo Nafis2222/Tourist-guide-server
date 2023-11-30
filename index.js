@@ -28,6 +28,8 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     const packageCollection = await client.db('tourist-guide').collection('package')
     const StoryCollection = await client.db('tourist-guide').collection('story')
+    const bookingCollection = await client.db('tourist-guide').collection('booking')
+
 
     // story part
     app.get('/story', async(req,res)=>{
@@ -40,6 +42,10 @@ async function run() {
       const query = {_id: new ObjectId(id)}
       const result = await StoryCollectionCollection.findOne(query)
       res.send(result)
+    })
+
+    app.post('/booking', async(req,res)=>{
+      
     })
 
 
